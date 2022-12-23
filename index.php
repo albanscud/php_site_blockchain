@@ -8,7 +8,8 @@
     </head>
     <body>
         <?php
-        //$db = new PDO('mysql:host=localhost;dbname=bddcryptosvrai';charset = utf-8, 'root', '');
+        $db = new PDO('mysql:host=localhost;dbname=bddcryptosvrai', 'root', '');
+        
 
         ?>
         <!-- L'en-tête -->
