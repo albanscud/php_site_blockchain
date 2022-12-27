@@ -1,4 +1,5 @@
-
+<?php
+?>
 <div class="grid grid-cols-1 lg:grid-cols-3">
     <!-- Contact information -->
     <div class="relative overflow-hidden bg-gradient-to-b bg-orange-400 py-10 px-6 sm:px-10 xl:p-12">
