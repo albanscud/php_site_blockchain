@@ -8,7 +8,7 @@
     </head>
     <body>
         <?php
-        $db = new PDO('mysql:host=localhost;dbname=bddcryptosvrai', 'root', '');
+        //$db = new PDO('mysql:host=localhost;dbname=bddcryptosvrai', 'root', '');
         
 
         ?>
