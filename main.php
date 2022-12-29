@@ -4,7 +4,7 @@
         <div class="relative bg-white">
             <div class="lg:absolute lg:inset-0">
               <div class="lg:absolute lg:inset-y-0 lg:left-0 lg:w-1/2">
-                <img class="h-90 w-full object-cover lg:absolute lg:h-full" src="/images/bitcoin.jpeg" alt="photo d'un bitcoin">
+                <img class="h-90 w-full object-cover lg:absolute lg:h-full" src="/_images/bitcoin.jpeg" alt="photo d'un bitcoin">
               </div>
             </div>
             <div class="relative px-4 pt-12 pb-16 sm:px-6 sm:pt-16 lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:px-0">
@@ -41,7 +41,7 @@
       <div class="relative bg-white">
         <div class="lg:absolute lg:inset-0">
           <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-            <img class="h-90 w-full object-cover lg:absolute lg:h-full" src="/images/ssss.jpeg" alt="photo d'un bitcoin">
+            <img class="h-90 w-full object-cover lg:absolute lg:h-full" src="/_images/ssss.jpeg" alt="photo d'un bitcoin">
           </div>
         </div>
         <div class="relative px-4 pt-12 pb-16 sm:px-6 sm:pt-16 lg:mx-auto lg:grid lg:max-w-10xl lg:grid-cols-3 lg:px-15">

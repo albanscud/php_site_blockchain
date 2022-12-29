@@ -1,5 +1,5 @@
 <?php
-
+ include("_footer/script.php."); 
 ?>
 <footer class="bg-violet-600">
     <div class="mx-auto max-w-7xl overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
