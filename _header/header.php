@@ -1,6 +1,6 @@
 
 <?php 
-include("script.php")
+include("script.php");
 ?>
 <div class="bg-white flex">
     <div class="sm:py-2 sm:px-2 lg:px-2  "><img src="./_images/logo.png" alt="logo de la boite" width="200"></div>

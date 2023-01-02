@@ -1,7 +1,7 @@
 <?php
  include("_footer/script.php."); 
 ?>
-<footer class="bg-violet-600">
+<footer class="bg-violet-600 ">
     <div class="mx-auto max-w-7xl overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
       <nav class="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
         <div class="px-5 py-2">
