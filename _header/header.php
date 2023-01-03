@@ -3,7 +3,7 @@
 include("script.php");
 ?>
 <div class="bg-white flex">
-    <div class="sm:py-2 sm:px-2 lg:px-2  "><img src="./_images/logo.png" alt="logo de la boite" width="200"></div>
+    <div class="sm:py-2 sm:px-2 lg:px-2" href="/"><img src="./_images/logo.png" alt="logo de la boite" width="200"></div>
     <div class="mx-auto max-w-7xl px-4 sm:py-10 sm:px-6 lg:px-8">
       <div class="text-center">
         <h2 class="text-xl font-semibold text-orange-400">Cryptomonnaies</h2>
@@ -24,7 +24,7 @@ include("script.php");
           <!-- navbar gauche -->
           <div class="hidden md:flex items-center space-x-20">
             <a class="py-4 px-2 text-orange-400 font-semibold hover:text-white transition duration-300" href ="/contact.php">Nous contacter</a>
-            <a class="py-4 px-2 text-orange-400 font-semibold hover:text-white transition duration-300">Différentes cryptomonnaies</a>
+            <a class="py-4 px-2 text-orange-400 font-semibold hover:text-white transition duration-300" href="/differentescryptos.php">Différentes cryptomonnaies</a>
             
           </div>
         </div>

@@ -65,7 +65,7 @@
                     <input class="form-control" type="text" name="pays" value ="" placeholder="pays"/>
                 </div>
                 <div class="mb-3">
-                    <button type="submit" class="btn btn-outline-primary">S'inscrire</button>
+                    <button type="submit" name="inscription" class="btn btn-outline-primary">S'inscrire</button>
                 </div>
                 
             </form>

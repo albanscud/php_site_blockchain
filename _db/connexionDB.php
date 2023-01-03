@@ -4,7 +4,7 @@
     private $host    = 'localhost';  // nom de l'host  
     private $name    = 'blockchain';    // nom de la base de donnée
     private $user    = 'root';       // utilisateur 
-    private $pass    = 'root';       // mot de passe (il faudra peut-être mettre '' sous Windows)
+    private $pass    = 'root';       // mot de passe 
     private $connexion;
     
     function __construct($host = null, $name = null, $user = null, $pass = null){
@@ -26,7 +26,7 @@
     }
 
     public function DB(){
-        $this->connexion;
+        return $this->connexion;
     } 
 }
 $BDD = new connexionDB();

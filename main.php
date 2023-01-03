@@ -1,5 +1,18 @@
-<?php
-?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- les liens -->
+        <?php include ("_head/link.php"); ?>
+        <title>Inscription</title>
+    </head>
+    <body>
+        
+        <!-- connexion bade de donnees -->
+        <?php
+        require_once ("include.php");
+        //$db = new PDO('mysql:host=localhost;dbname=bddcryptosvrai', 'root', '');
+        ?>
+
  <section>
         <div class="relative bg-white">
             <div class="lg:absolute lg:inset-0">
@@ -76,3 +89,7 @@
         </div>
       </div>
     </section>
+     <!-- les scripts tailwinds et bootstrap -->
+     <?php include("_head/script.php") ;?>
+    </body>
+</html>        
