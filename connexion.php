@@ -1,11 +1,11 @@
 <!-- connexion bade de donnees -->
 <?php
-    require_once ("include.php");
+    require_once ('include.php');
     //$db = new PDO('mysql:host=localhost;dbname=bddcryptosvrai', 'root', '');
-    if(isset($_SESSION['id'])) {
-      header('Location : /');
+    if(isset($_SESSION['id'])){
+      header('Location: /');
       exit;
-      } 
+    } 
 
     if(!empty($_POST)){
         extract($_POST);
@@ -14,72 +14,72 @@
 
       
       if(isset($_POST['connexion'])){
-          $pseudo = ucfirst(trim($pseudo));
-          $password = trim($password);
-          
-          if(empty($pseudo)){
-              $valid = false;
-              $err_pseudo = "Ce champ ne peut pas être vide"; 
-          }
-          
-          if(empty($password)){
+        $pseudo = ucfirst(trim($pseudo));
+        $password = trim($password);
+        
+        if(empty($pseudo)){
             $valid = false;
-            $err_password = "Ce champ ne peut pas être vide";
-          }
+            $err_pseudo = "Ce champ ne peut pas être vide"; 
+        }
+        
+        if(empty($password)){
+          $valid = false;
+          $err_password = "Ce champ ne peut pas être vide";
+        }
 
-          if($valid){
-              $req = $DB->prepare("SELECT mdp 
-              FROM utilisateur 
-              WHERE pseudo = ?");
-          
-              $req->execute(array($pseudo));
-
-              $req = $req->fetch();
-
-            if(isset($req['mdp'])){
-              if(!password_verify($password, $req['mdp'])) {
-                  $valid = false;
-                  $err_pseudo = "La combinaison du pseudo / mot de passe est incorrecte";
-                }
-
-              }else{
-                  $valid = false;
-                  $err_pseudo = "La combinaison du pseudo / mot de passe est incorrecte";
-              }
-          }
-
-          
-          if($valid){
-
-            $req = $DB->prepare("SELECT * 
+        if($valid){
+            $req = $DB->prepare("SELECT mdp 
             FROM utilisateur 
-            WHERE pseudo = ?"); 
+            WHERE pseudo = ?");
         
             $req->execute(array($pseudo));
 
-            $req_user = $req->fetch(); 
+            $req = $req->fetch();
 
-            if(isset($req_user['id'])){
-              $date_connexion = date('Y-m-d H:i:s'); 
+          if(isset($req['mdp'])){
+            if(!password_verify($password, $req['mdp'])) {
+                $valid = false;
+                $err_pseudo = "La combinaison du pseudo / mot de passe est incorrecte";
+              }
 
-              $req = $DB->prepare("UPDATE utilisateur SET date_connexion = ? WHERE id = ?");
-              $req->execute(array($date_connexion, $req_user['id']));
-
-              $_SESSION['id'] = $req_user['id'];
-              $_SESSION['pseudo'] = $req_user['pseudo'];
-              $_SESSION['mail'] = $req_user['mail'];
-              $_SESSION['role'] = $req_user['role'];
-
-              header('Location: /');
-              exit;
             }else{
-              $valid = false;
-              $err_pseudo = "La combinaison du pseudo / mot de passe est incorrecte";
+                $valid = false;
+                $err_pseudo = "La combinaison du pseudo / mot de passe est incorrecte";
             }
-          }
+        }
+
+        
+        if($valid){
+
+          $req = $DB->prepare("SELECT * 
+          FROM utilisateur 
+          WHERE pseudo = ?"); 
       
+          $req->execute(array($pseudo));
+
+          $req_user = $req->fetch(); 
+
+          if(isset($req_user['id'])){
+            $date_connexion = date('Y-m-d H:i:s'); 
+
+            $req = $DB->prepare("UPDATE utilisateur SET date_connexion = ? WHERE id = ?");
+            $req->execute(array($date_connexion, $req_user['id']));
+
+            $_SESSION['id'] = $req_user['id'];
+            $_SESSION['pseudo'] = $req_user['pseudo'];
+            $_SESSION['mail'] = $req_user['mail'];
+            $_SESSION['role'] = $req_user['role'];
+
+            header('Location: /');
+            exit;
+          }else{
+            $valid = false;
+            $err_pseudo = "La combinaison du pseudo / mot de passe est incorrecte";
+          }
+        }
       }
     }
+     
        
 ?>
 <!DOCTYPE html>

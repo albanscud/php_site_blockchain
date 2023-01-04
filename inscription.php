@@ -144,7 +144,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Confirmation du mail :</label>
-                            <input class="form-control" type="email" name="confmail" value ="<?php if(isset($confmail)){ echo $confmail; } ?>" placeholder="confirmation mail"/>
+                            <input class="form-control" type="email" name="confmail" value ="" placeholder="confirmation mail"/>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Mot de passe:</label>
@@ -155,7 +155,7 @@
                             <label class="form-label">Confirmation du mot de passe:</label>
                             <input class="form-control"  type="password" name="confpassword" value ="" placeholder="confirmation mot de passe"/>
                         </div>
-                   <div class="mb-3">
+                        <div class="mb-3">
                             <label class="form-label">Date de naissance</label>
                             <input class="form-control" type="date" name="datenaissance" value ="<?php if(isset($datenaissance)){echo $datenaissance;} ?>" placeholder="date de naissance"/>
                         </div>
