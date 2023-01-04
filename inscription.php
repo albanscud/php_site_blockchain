@@ -81,7 +81,15 @@
 
                 if($valid){
 
-                    $crypt_password = crypt($password, '$6$rounds=5000$}~u0+0%1{N2CFrGsB+_U2(rrCW)PTW/[PY7Dp-K0{@(SoKAef;~~`g%>NuB 0ly($');
+                    //$crypt_password = crypt($password, '$6$rounds=5000$}~u0+0%1{N2CFrGsB+_U2(rrCW)PTW/[PY7Dp-K0{@(SoKAef;~~`g%>NuB 0ly($');
+                    $crypt_password = password_hash($password, PASSWORD_ARGON2ID);
+
+                    if (password_verify($password, $crypt_password)){
+                        echo 'Le mot de passe est valide';
+                    }else{
+                        echo "Le mot de passe n'est pas valide";
+                    }
+                    
                     $date_creation = date('Y-m-d H:i:s');
 
                     $req = $DB->prepare("INSERT INTO utilisateur(pseudo, mail, mdp, date_creation, date_connexion) VALUES (?, ?, ?, ?, ?)");
