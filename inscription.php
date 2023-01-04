@@ -1,7 +1,7 @@
  <!-- connexion bade de donnees -->
 <?php
         require_once('include.php');
-        //$db = new PDO('mysql:host=localhost;dbname=bddcryptosvrai', 'root', '');
+        //$db = new PDO('mysql:host=localhost;dbname=bddcryptosvrai', 'root', 'root');
 
 
         if(!empty($_POST)){
@@ -28,7 +28,7 @@
                 
                 }elseif(grapheme_strlen($pseudo) < 4){
                     $valid = false;
-                    $err_pseudo = "Ce pseudo doit faire plus de 4 caractères"; 
+                    $err_pseudo = "Ce pseudo doit faire plus de 3 caractères"; 
                 }elseif(grapheme_strlen($pseudo) > 25){
                     $valid = false;
                     $err_pseudo = "Ce pseudo doit faire moins de 26 caractères(" . grapheme_strlen($pseudo) . "/25";
