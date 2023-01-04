@@ -1,10 +1,11 @@
 <?php
  include("_footer/script.php."); 
 ?>
-<footer class="bg-violet-600 ">
-    <div class="mx-auto max-w-7xl overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
-      <nav class="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
-        <div class="px-5 py-2">
+
+<footer class="bg-violet-600 place-content-end">
+    <div class="mx-auto max-w-7xl overflow-hidden py-12 px-4 sm:px-6 lg:px-8 ">
+      <nav class="-mx-5 -my-2 flex flex-wrap justify-center " aria-label="Footer">
+        <div class="px-5 py-2 ">
           <a href="#" class="text-base text-orange-400 hover:text-gray-900">A propos</a>
         </div>
 
@@ -41,3 +42,4 @@
       <p class="mt-8 text-center text-base text-orange-400">&copy; 2022 Blockchain, tout droits reservés.</p>
     </div>
   </footer>
+

@@ -2,7 +2,11 @@
 <?php
         require_once('include.php');
         //$db = new PDO('mysql:host=localhost;dbname=bddcryptosvrai', 'root', 'root');
-
+        
+        if(isset($_SESSION['id'])) {
+            header('Location :/');
+            exit;
+           } 
 
         if(!empty($_POST)){
             extract($_POST);
@@ -84,23 +88,20 @@
                     //$crypt_password = crypt($password, '$6$rounds=5000$}~u0+0%1{N2CFrGsB+_U2(rrCW)PTW/[PY7Dp-K0{@(SoKAef;~~`g%>NuB 0ly($');
                     $crypt_password = password_hash($password, PASSWORD_ARGON2ID);
 
-                    if (password_verify($password, $crypt_password)){
+                    /* if (password_verify($password, $crypt_password)){
                         echo 'Le mot de passe est valide';
                     }else{
                         echo "Le mot de passe n'est pas valide";
-                    }
+                    } */
                     
                     $date_creation = date('Y-m-d H:i:s');
 
                     $req = $DB->prepare("INSERT INTO utilisateur(pseudo, mail, mdp, date_creation, date_connexion) VALUES (?, ?, ?, ?, ?)");
-                    $req->execute(array($pseudo, $mail, $crypt_password, $date_creation, $date_creation));
+                    $req->execute(array($pseudo, $mail, $crypt_password, $date_creation, $date_creation)); 
 
                     header('Location: /connexion.php');
                     exit;
 
-                }else{
-                    echo "regarde ce qui va pas il y a une faute";
-                    //pas d'insertion (affichage message d'erreur)
                 }
             
             }
@@ -122,10 +123,10 @@
         <!-- L'en-tête -->
         <?php include("_header/header.php"); ?>
         
-        <p class="text-5xl text-center">Inscription</p>
+        <p class="text-5xl text-center pt-10">Inscription</p>
         <!-- debut formulaire d'inscription -->
         
-        <div class="container">
+        <div class="container pt-10 pb-10">
             <div class="row">
                 <div class="col-3"></div>
                 <div class="col-6">
@@ -147,7 +148,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Mot de passe:</label>
-                            <input class="form-control" type="password" name="password" value ="<?php if(isset($password)){ echo $password; } ?>" placeholder="Mot de passe"/>
+                            <input class="form-control" type="password" name="password" value ="<?php if(isset($password)){ echo $password; } ?>" placeholder="mot de passe"/>
                             <div class="text-red-500"> <?php if(isset($err_password)){ echo $err_password;}?> </div>
                         </div>
                         <div class="mb-3">
@@ -164,7 +165,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Code postal</label>
-                            <input class="form-control" type="text" name="codepostal" value ="<?php if(isset($cp)){echo $cp;} ?>" placeholder="codepostal"/>
+                            <input class="form-control" type="text" name="codepostal" value ="<?php if(isset($cp)){echo $cp;} ?>" placeholder="code postal"/>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Ville</label>

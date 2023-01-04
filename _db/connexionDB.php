@@ -11,7 +11,7 @@
       if($host != null){ 
         $this->host = $host;           
         $this->name = $name;           
-        $this->user = $user;          
+        $this->user = $user;           
         $this->pass = $pass;
     }
         try{

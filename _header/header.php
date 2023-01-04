@@ -29,6 +29,8 @@ include("script.php");
           </div>
         </div>
         <!-- navbar droite -->
+        aaa
+        
         <div class="hidden md:flex items-center space-x-3 ">
           <a  class="py-2 px-2 font-medium text-orange-400 rounded hover:bg-orange-600 hover:text-white transition duration-300" href = "/connexion.php">Se connecter</a>
           <a  class="py-2 px-2 font-medium text-orange-400  rounded hover:bg-orange-600 hover:text-white transition duration-300" href = "/inscription.php">S'inscrire</a>
