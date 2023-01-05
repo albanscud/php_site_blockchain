@@ -3,15 +3,15 @@
         require_once('include.php');
         //$db = new PDO('mysql:host=localhost;dbname=bddcryptosvrai', 'root', 'root');
         
-        if(isset($_SESSION['id'])) {
-            header('Location :/');
+        if(isset($_SESSION['id'])){
+            header('Location: /moncompte.php');
             exit;
-           } 
+        }   
 
         if(!empty($_POST)){
             extract($_POST);
 
-            $valid = (boolean) true;
+            $valid = true;
 
             
             if(isset($_POST['inscription'])){
@@ -24,7 +24,7 @@
                 $adresse = trim($adresse);
                 $cp = trim($cp);
                 $ville = trim($ville);
-                $pays = trim($pays);
+                $pays = trim($pays);  
                 
                 if(empty($pseudo)){
                     $valid = false;
@@ -102,7 +102,7 @@
                     header('Location: /connexion.php');
                     exit;
 
-                }
+                }  
             
             }
         }

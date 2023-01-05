@@ -23,17 +23,28 @@ include("script.php");
           </div>
           <!-- navbar gauche -->
           <div class="hidden md:flex items-center space-x-20">
-            <a class="py-4 px-2 text-orange-400 font-semibold hover:text-white transition duration-300" href ="/contact.php">Nous contacter</a>
+            <a class="py-4 px-2 text-orange-400 font-semibold hover:text-white transition duration-300" href ="/moncompte.php">Mon compte</a>
             <a class="py-4 px-2 text-orange-400 font-semibold hover:text-white transition duration-300" href="/differentescryptos.php">Différentes cryptomonnaies</a>
             
           </div>
         </div>
         <!-- navbar droite -->
-        aaa
+        
         
         <div class="hidden md:flex items-center space-x-3 ">
-          <a  class="py-2 px-2 font-medium text-orange-400 rounded hover:bg-orange-600 hover:text-white transition duration-300" href = "/connexion.php">Se connecter</a>
-          <a  class="py-2 px-2 font-medium text-orange-400  rounded hover:bg-orange-600 hover:text-white transition duration-300" href = "/inscription.php">S'inscrire</a>
+          <?php
+            if(!isset($_SESSION['id'])){
+            ?>
+              <a  class="py-2 px-2 font-medium text-orange-400 rounded hover:bg-orange-600 hover:text-white transition duration-300" href = "/connexion.php">Se connecter</a>
+              <a  class="py-2 px-2 font-medium text-orange-400  rounded hover:bg-orange-600 hover:text-white transition duration-300" href = "/inscription.php">S'inscrire</a>
+            <?php
+            }else{
+            ?>
+              <a  class="py-2 px-2 font-medium text-orange-400 rounded hover:bg-orange-600 hover:text-white transition duration-300" href = "/deconnexion.php">Deconnexion</a>
+            <?php
+            }
+          ?>
+          
         </div>
         <!-- bouton pour mobile -->
         <div class="md:hidden flex items-center">

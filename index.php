@@ -1,3 +1,8 @@
+ <!-- connexion bade de donnees -->
+ <?php
+        require_once ("include.php");
+        //$db = new PDO('mysql:host=localhost;dbname=bddcryptosvrai', 'root', '');
+        ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -7,18 +12,9 @@
     </head>
     <body>
         
-        <!-- connexion bade de donnees -->
-        <?php
-        require_once ("include.php");
-        //$db = new PDO('mysql:host=localhost;dbname=bddcryptosvrai', 'root', '');
-        ?>
+       
         
-<?php if (isset($_SESSION['id'])){
-          $var = "bonjour" . $_SESSION['pseudo'];
-          }else{
-            $var = "bonjour a tous";
-          } 
-       ?>
+
         <!-- L'en-tête -->
         <?php include("_header/header.php"); ?>
        

@@ -2,24 +2,68 @@
 <?php
     require_once ('include.php');
     //$db = new PDO('mysql:host=localhost;dbname=bddcryptosvrai', 'root', '');
+    // Vérification des informations d'identification de l'utilisateur
+/* if (!empty($_POST)) {
+  extract($_POST);
+
+  $valid = true;
+
+  // Vérification du nom d'utilisateur
+  if (empty($pseudo)) {
+      $valid = false;
+      $err_pseudo = "Veuillez entrer votre nom d'utilisateur";
+  }
+
+  // Vérification du mot de passe
+  if (empty($password)) {
+      $valid = false;
+      $err_password = "Veuillez entrer votre mot de passe";
+  }
+
+  // Si les informations d'identification sont valides, recherche de l'utilisateur dans la base de données
+  if ($valid) {
+      $req = $DB->prepare("SELECT id, mdp FROM utilisateur WHERE pseudo = ?");
+      $req->execute(array($pseudo));
+      $user = $req->fetch(); // Utilisation d'un autre nom de variable pour stocker le résultat de la requête SQL
+
+      // Si l'utilisateur a été trouvé, vérification du mot de passe
+      if ($user) {
+          if (password_verify($password, $user['mdp'])) {
+              // Si le mot de passe est correct, connexion de l'utilisateur
+              session_start();
+              $_SESSION['auth'] = $user;
+              header('Location: /');
+              exit;
+          } else {
+              // Si le mot de passe est incorrect, affichage d'un message d'erreur
+              $err_password = "Mot de passe incorrect";
+          }
+      } else {
+          // Si l'utilisateur n'a pas été trouvé, affichage d'un message d'erreur
+          $err_pseudo = "Pseudo incorrect";
+      }
+  }
+} */
+
     if(isset($_SESSION['id'])){
-      header('Location: /');
+      header('Location: /moncompte.php');
       exit;
-    } 
+    }   
 
     if(!empty($_POST)){
         extract($_POST);
 
-      $valid = (boolean) true;
+      $valid = true;
 
       
-      if(isset($_POST['connexion'])){
-        $pseudo = ucfirst(trim($pseudo));
-        $password = trim($password);
+       /*  if(isset($_POST['connexion'])){
+        $pseudo = trim($pseudo);
+        $password = trim($password);   */
         
         if(empty($pseudo)){
             $valid = false;
-            $err_pseudo = "Ce champ ne peut pas être vide"; 
+            $err_pseudo = "Ce champ ne peut pas être vide";
+
         }
         
         if(empty($password)){
@@ -76,8 +120,8 @@
             $valid = false;
             $err_pseudo = "La combinaison du pseudo / mot de passe est incorrecte";
           }
-        }
-      }
+        /* } */
+       } 
     }
      
        
