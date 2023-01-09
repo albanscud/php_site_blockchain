@@ -9,7 +9,7 @@
     <head>
         <!-- les liens -->
         <?php include ("_head/link.php"); ?>
-        <title>Acceuil</title>
+        <title>Accueil</title>
     </head>
     <body>
         

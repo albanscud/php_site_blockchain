@@ -40,6 +40,7 @@ include("script.php");
             <?php
             }else{
             ?>
+              <a  class="py-2 px-2 font-medium text-orange-400 rounded hover:bg-orange-600 hover:text-white transition duration-300" href = "/monprofil.php">Mon profil</a>
               <a  class="py-2 px-2 font-medium text-orange-400 rounded hover:bg-orange-600 hover:text-white transition duration-300" href = "/deconnexion.php">Deconnexion</a>
             <?php
             }

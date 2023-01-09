@@ -114,7 +114,7 @@
             $_SESSION['mail'] = $req_user['mail'];
             $_SESSION['role'] = $req_user['role'];
 
-            header('Location: /');
+            header('Location: /moncompte.php');
             exit;
           }else{
             $valid = false;
