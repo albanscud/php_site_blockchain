@@ -43,7 +43,7 @@
     <head>
         <!-- les liens -->
         <?php include ("_head/link.php"); ?>
-        <title>Profil de <?php echo $req_user ['pseudo']    ?></title>
+        <title>Profil de <?php echo $req_user ['pseudo'] ?></title>
     </head>
     <body>
        
