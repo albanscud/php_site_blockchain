@@ -3,12 +3,12 @@
         require_once ('include.php');
         //$db = new PDO('mysql:host=localhost;dbname=bddcryptosvrai', 'root', '');
 
-        if(!isset($_SESSION)){
+        if(!isset($_SESSION['id'])){
             header('Location: /');
             exit;
         }
 
-        $req = $DB->prepare("SELECT * 
+        $req = $DB->prepare("SELECT *
         FROM utilisateur 
         WHERE id = ?"); 
 
@@ -43,24 +43,24 @@
     <head>
         <!-- les liens -->
         <?php include ("_head/link.php"); ?>
-        <title>Profil de <?php $req_user ['pseudo']    ?></title>
+        <title>Profil de <?php echo $req_user ['pseudo']    ?></title>
     </head>
     <body>
        
         <!-- L'en-tête -->
     <?php include("_header/header.php"); ?>
-    <div class="container pb-96">
+    <div class="container pb-52">
         <div class="row">
             <div class="col-12">
-                <h1 class="text-3xl py-5">bonjour <?php $req_user['pseudo'] ?></h1>
-                <div class="py-5">
-                    Date d'inscription : Le <?php $date_inscription ?>
+                <h1 class="text-5xl py-5 text-orange-400">Bonjour <?php echo $req_user['pseudo']?> voici votre profil :</h1>
+                <div class="py-5 text-3xl">
+                    Date d'inscription : Le <?php  echo $date_inscription ?>
                 </div>
-                <div class="py-5">
-                    Date de connexion : Le <?php $date_connexion ?>
+                <div class="py-5 text-3xl">
+                    Date de connexion : Le <?php echo $date_connexion ?>
                 </div>
-                <div class="py-5">
-                    Mon rôle : Le <?php $role ?>
+                <div class="py-5 text-3xl">
+                    Mon rôle : <?php echo $role ?>
                 </div>
             </div>
         </div>

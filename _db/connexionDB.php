@@ -26,7 +26,7 @@
     }
 
     public function DB(){
-        return $this->connexion;
+    return $this->connexion;
     } 
 }
 $BDD = new connexionDB();
